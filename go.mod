@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/caddyserver/caddy/v2 v2.6.4
-	github.com/libdns/linode v0.1.0
+	github.com/libdns/linode v0.2.0
 )
 
 require (
