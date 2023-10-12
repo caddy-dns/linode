@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/caddyserver/caddy/v2 v2.7.5
-	github.com/libdns/linode v0.4.0
+	github.com/libdns/linode v0.4.1
 )
 
 require (
@@ -18,7 +18,7 @@ require (
 	github.com/google/uuid v1.3.1 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect
 	github.com/libdns/libdns v0.2.1 // indirect
-	github.com/linode/linodego v1.19.0 // indirect
+	github.com/linode/linodego v1.23.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/mholt/acmez v1.2.0 // indirect
 	github.com/miekg/dns v1.1.55 // indirect
