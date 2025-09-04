@@ -1,9 +1,9 @@
 package linode
 
 import (
-	linode "github.com/HugoKlepsch/libdns-linode"
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
+	"github.com/libdns/linode"
 )
 
 // Provider lets Caddy read and manipulate DNS records hosted by this DNS provider.
