@@ -20,10 +20,10 @@ See [Building](#building) for instructions.
 To compile Caddy with this module, use 
 [xcaddy](https://github.com/caddyserver/xcaddy?tab=readme-ov-file#custom-builds).
 
-Import `github.com/HugoKlepsch/caddy-dns_linode` using `--with github.com/HugoKlepsch/caddy-dns_linode`:
+Import `github.com/caddy-dns/linode` using `--with github.com/caddy-dns/linode`:
 
 ```bash
-xcaddy build --with github.com/HugoKlepsch/caddy-dns_linode
+xcaddy build --with github.com/caddy-dns/linode
 ```
 
 This will produce a binary called `caddy` in the current directory that is 
