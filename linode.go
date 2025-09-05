@@ -22,7 +22,7 @@ func (Provider) CaddyModule() caddy.ModuleInfo {
 }
 
 // Provision sets up the module. Implements caddy.Provisioner.
-func (p *Provider) Provision(ctx caddy.Context) error {
+func (p *Provider) Provision(_ caddy.Context) error {
 	repl := caddy.NewReplacer()
 	p.Provider.APIToken = repl.ReplaceAll(p.Provider.APIToken, "")
 	p.Provider.APIURL = repl.ReplaceAll(p.Provider.APIURL, "")
@@ -40,6 +40,7 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 //	    api_token <string>
 //	    api_url <string>
 //	    api_version <string>
+//	    debug_logs_enabled <true|false>
 //	}
 func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 	for d.Next() {
@@ -77,6 +78,20 @@ func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 				}
 				if d.NextArg() {
 					p.Provider.APIVersion = d.Val()
+				}
+				if d.NextArg() {
+					return d.ArgErr()
+				}
+			case "debug_logs_enabled":
+				if d.NextArg() {
+					enableString := d.Val()
+					if enableString == "true" {
+						p.Provider.DebugLogsEnabled = true
+					} else if enableString == "false" {
+						p.Provider.DebugLogsEnabled = false
+					} else {
+						return d.Errf("invalid value for debug_logs_enabled: %s. Should be true or false", enableString)
+					}
 				}
 				if d.NextArg() {
 					return d.ArgErr()
